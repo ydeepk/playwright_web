@@ -8,5 +8,5 @@ test('Verify page title', async({page}) => {
     await page.goto('https://react-shopping-cart-67954.firebaseapp.com/');
 
     // check if page has the right title
-    await expect(page).toHaveTitle(/Typescript React shopping cart/);
+    await expect(page).toHaveTitle(/Typescript React Shopping cart/);
 });
