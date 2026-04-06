@@ -1,0 +1,14 @@
+{
+    "testData":[
+        {
+            "name": "Tropical Wine T-shirt",
+            "price":"134.90",
+            "size":"L"
+        },
+        {
+            "name": "Black T-shirt with white stripes",
+            "price":"14.90",
+            "size":"L"
+        }
+    ]
+}

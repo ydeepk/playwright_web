@@ -12,7 +12,7 @@ test('find specific product', async ({ page }) => {
     console.log('Test 1');
 
     // Navigate to the ecommerce demo site
-    await page.goto('https://react-shopping-cart-67954.firebaseapp.com/');
+    await page.goto('/');
 
     // Identify the product card containing specific product text
     // Using 'filter + has' ensures we scope to the correct container instead of relying on fragile selectors
