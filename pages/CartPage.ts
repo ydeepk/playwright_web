@@ -2,9 +2,9 @@ import { Page, Locator, expect } from '@playwright/test';
 
 export class CartPage {
 
-    // ==========================
+    // ===========================
     // Properties
-    // ==========================
+    // ===========================
 
     // Playwright page instance
     private readonly page: Page;
