@@ -22,7 +22,7 @@ for (const product of data.testData) {
         const productsResponsePromise = page.waitForResponse('**/products.json');
 
         // Navigate to base URL (configured in playwright.config.ts)
-        await page.goto('/');
+        await page.goto('https://react-shopping-cart-67954.firebaseapp.com/');
 
         // Resolve API response and parse JSON
         const productsResponse = await productsResponsePromise;
@@ -85,7 +85,7 @@ for(const product of data.testData) {
 
         });
 
-        await page.goto('/');
+        await page.goto('https://react-shopping-cart-67954.firebaseapp.com/');
 
         await productPage.selectSize(product.size);
         await productPage.addProductToCart(product.name);
@@ -107,7 +107,7 @@ test('product cost validation', async ({ page }) => {
     const cartPage = new CartPage(page);
 
     // Navigate to application
-    await page.goto('/');
+    await page.goto('https://react-shopping-cart-67954.firebaseapp.com/');
 
     // Select size "L"
     // Exact match avoids selecting similar values like "XL"

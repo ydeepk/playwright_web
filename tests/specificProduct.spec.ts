@@ -12,7 +12,7 @@ test('find specific product', async ({ page }) => {
     console.log('Test 1');
 
     // Navigate to the ecommerce demo site
-    await page.goto('/');
+    await page.goto('https://react-shopping-cart-67954.firebaseapp.com/');
 
     // Identify the product card containing specific product text
     // Using 'filter + has' ensures we scope to the correct container instead of relying on fragile selectors
@@ -54,7 +54,7 @@ test('find specific product another way', async ({ page }) => {
     console.log('Test 2');
 
     // Navigate to the ecommerce demo site
-    await page.goto('/');
+    await page.goto('https://react-shopping-cart-67954.firebaseapp.com/');
 
     // Directly locate product using text filter and chain button locator
     // Faster to write but less controlled compared to scoped locator approach
