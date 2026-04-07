@@ -51,6 +51,55 @@ for (const product of data.testData) {
 
 
 // ==========================
+// Mocking API data for testing
+// ==========================
+for(const product of data.testData) {
+
+    test(`Mocking and Validating - ${product.name}`, async({page, context}) => {
+
+        const cartPage = new CartPage(page);
+        const productPage = new ProductPage(page);
+
+        await page.route(`**/products.json`, async(route) => {
+
+            try{
+            const response = await route.fetch();
+            const json = await response.json();
+
+            if(json && json.products && json.products.length > 0) {
+
+                console.log(`LOG: Successfully intercepted ${json.products.length} products.`);
+
+                json.products[0].price = 0.01;
+
+                console.log(`LOG: Mocked ${json.products[0].title} price to $0.01`);
+
+                await route.fulfill({
+                contentType: 'application/json',
+                body: JSON.stringify(json)
+            });
+        }
+        } catch(e){
+            console.log('Network interception settled.');
+        }   
+
+        });
+
+        await page.goto('/');
+
+        await productPage.selectSize(product.size);
+        await productPage.addProductToCart(product.name);
+
+        await cartPage.verifySubtotal(product.price);
+
+        await page.unroute('**/products.json');
+
+
+    });
+
+}
+
+// ==========================
 // Test: Product cost validation (E2E flow)
 // ==========================
 test('product cost validation', async ({ page }) => {
