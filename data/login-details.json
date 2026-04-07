@@ -1,0 +1,16 @@
+{
+    "testData":[
+        {
+            "username": "Admin",
+            "password":"admin123"
+        },
+        {
+            "username": "Admin",
+            "password":"Admin123"
+        },
+        {
+            "username": "admin",
+            "password":"admin123"
+        }
+    ]
+}
